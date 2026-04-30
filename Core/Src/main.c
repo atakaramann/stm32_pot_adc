@@ -22,8 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
-#define V25        0.76f    /* Voltage at 25 Celsius (V) */
-#define AVG_SLOPE  0.0025f  /* mV/Celsius */
 
 /* USER CODE END Includes */
 
@@ -34,7 +32,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define V25        0.76f    /* Voltage at 25 Celsius (V) */
+#define AVG_SLOPE  0.0025f  /* mV/Celsius */
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -64,6 +63,8 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* Reads all 3 ADC channels sequentially via polling
+ * Returns false if any conversion fails */
 bool Read_ADC_Value(uint16_t *adc_result){
     if(HAL_ADC_Start(&hadc1) == HAL_OK){
     	for(int i = 0; i < 3; i++){
