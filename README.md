@@ -1,16 +1,16 @@
-STM32 ADC Voltage and Temperature Monitor
-Board: STM32 Nucleo F413ZH
-IDE: STM32CubeIDE
-Library: HAL
+## STM32 ADC Voltage and Temperature Monitor
 
-What it does
-Reads potentiometer, internal reference (VREFINT) and temperature sensor using ADC.  
-Calculates real VDDA, converts ADC values to voltage and estimates temperature.
+**Board:** STM32 Nucleo F413ZH  
+**IDE:** STM32CubeIDE  
+**Library:** HAL  
 
-Key concepts
-Multi-channel ADC conversion
-VREFINT-based VDDA calculation
-ADC to voltage conversion (12-bit resolution)
-Internal temperature sensor usage
-Polling-based ADC reading with HAL_ADC_PollForConversion()
-Float calculations for physical values
+### What it does
+Reads potentiometer, VREFINT and internal temperature sensor via ADC and calculates voltage and temperature values.
+
+### Key concepts
+- Multi-channel ADC conversion
+- VREFINT-based VDDA calculation
+- 12-bit ADC to voltage conversion
+- Internal temperature sensor usage
+- HAL_ADC_PollForConversion() based reading
+- Float-based calculations
